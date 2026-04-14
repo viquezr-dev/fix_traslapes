@@ -2,7 +2,7 @@
 """
 Fix Traslapes - Plugin para QGIS
 Desarrollado por Raul Viquez
-Version: 2.4 - Estable
+Version: 1.0 - Estable
 """
 
 import os
