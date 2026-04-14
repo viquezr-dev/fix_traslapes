@@ -1,9 +1,22 @@
 [general]
 name=Fix Traslapes
 qgisMinimumVersion=3.0
+qgisMaximumVersion=3.99
 description=Detecta y corrige traslapes en capas de poligonos
+about=Herramienta para detectar y corregir traslapes en poligonos. Caracteristicas: cargar capa de poligonos, configurar umbral de deteccion, correccion automatica de geometrias traslapadas, visualizacion de resultados con capas de traslapes (rojo) y centroides.
+category=Vector
 version=1.0
 author=RAUL VIQUEZ (viquezr@gmail.com)
-about=Herramienta para detectar y corregir traslapes en poligonos. Caracteristicas: Cargar una capa de poligonos, seleccionar capa, configurar umbral, iniciar correccion. Visualizacion de resultados: capa de traslapes (rojo), centroides (puntos rojos) y capa corregida.
-category=Vector
-tags=traslapes,poligonos,correccion,geometria
+
+changelog=
+    1.0.0 Primera version estable
+    1.0.0 Deteccion y correccion de traslapes en poligonos
+    1.0.0 Generacion de capas de resultado (poligonos corregidos, areas de traslape, centroides)
+
+tags=traslapes,poligonos,correccion,geometria,vector,overlap,fix
+homepage=https://github.com/viquezr-dev/fix_traslapes
+tracker=https://github.com/viquezr-dev/fix_traslapes/issues
+repository=https://github.com/viquezr-dev/fix_traslapes
+icon=icon.png
+experimental=False
+deprecated=False
