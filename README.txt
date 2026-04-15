@@ -1,132 +1,134 @@
-# Fix Traslapes - Plugin para QGIS
+# Fix Traslapes - QGIS Plugin
 
 [![QGIS Plugin](https://img.shields.io/badge/QGIS-Plugin-589632?style=flat&logo=qgis)](https://qgis.org)
 [![Version](https://img.shields.io/badge/version-2.4-blue.svg)](https://github.com/viquezr-dev/fix_traslapes)
 [![License](https://img.shields.io/badge/license-GPLv2-green.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
 [![Python](https://img.shields.io/badge/python-3.9%2B-yellow.svg)](https://www.python.org/)
 
-**Fix Traslapes** es un plugin para QGIS que detecta y corrige automáticamente traslapes (superposiciones) en capas de polígonos, generando capas de resultados limpias y editables.
+**Fix Traslapes** is a QGIS plugin that detects and automatically fixes overlaps in polygon layers, generating clean and editable result layers.
 
-## ✨ Características principales
+## ✨ Key Features
 
-- 🔍 **Detección precisa** de traslapes entre polígonos
-- ⚙️ **Umbral configurable** para ignorar traslapes muy pequeños
-- 🔧 **Corrección automática** mediante recorte geométrico
-- 🗺️ **Capas de visualización** (polígonos de traslape en rojo + centroides)
-- 📊 **Capa resultante** editable y lista para continuar trabajando
-- 💻 **Interfaz intuitiva** con barra de progreso y log detallado
+- 🔍 **Accurate detection** of overlaps between polygons
+- ⚙️ **Configurable threshold** to ignore very small overlaps
+- 🔧 **Automatic correction** through geometric clipping
+- 🗺️ **Visualization layers** (red overlap polygons + centroids)
+- 📊 **Editable result layer** ready for further work
+- 💻 **Intuitive interface** with progress bar and detailed log
 
-## 📋 Requisitos
+## 📋 Requirements
 
-- **QGIS** versión 3.0 o superior
+- **QGIS** version 3.0 or higher
 - **Python** 3.9+
-- Capas de **polígonos** (no puntos ni líneas)
+- **Polygon** layers (not points or lines)
 
-## 🚀 Instalación
+## 🚀 Installation
 
-### Desde el repositorio oficial de QGIS (próximamente)
-1. Abrir QGIS → Complementos → Administrar e instalar complementos
-2. Buscar "Fix Traslapes"
-3. Hacer clic en "Instalar"
+### From the official QGIS repository (coming soon)
+1. Open QGIS → Plugins → Manage and Install Plugins
+2. Search for "Fix Traslapes"
+3. Click "Install"
 
-### Instalación manual desde GitHub
-1. Descargar el repositorio como ZIP
+### Manual installation from GitHub
+1. Download the repository as ZIP
 https://github.com/viquezr-dev/fix_traslapes/archive/main.zip
 
-2. Descomprimir en la carpeta de plugins de QGIS:
-- **Windows**: `C:\Users\TU_USUARIO\AppData\Roaming\QGIS\QGIS3\profiles\default\python\plugins\`
+2. Extract to the QGIS plugins folder:
+- **Windows**: `C:\Users\YOUR_USER\AppData\Roaming\QGIS\QGIS3\profiles\default\python\plugins\`
 - **Linux**: `~/.local/share/QGIS/QGIS3/profiles/default/python/plugins/`
 - **macOS**: `~/Library/Application Support/QGIS/QGIS3/profiles/default/python/plugins/`
-3. Renombrar la carpeta a `fix_traslapes`
-4. Reiniciar QGIS
-5. Activar el plugin en Complementos → Administrar complementos
+3. Rename the folder to `fix_traslapes`
+4. Restart QGIS
+5. Activate the plugin in Plugins → Manage Plugins
 
-## 🎯 Cómo usar
+## 🎯 How to Use
 
-### Paso a paso
-1. **Cargar** una capa de polígonos en QGIS
-2. **Abrir el plugin**: Botón en la barra de herramientas o menú `Complementos → Fix Traslapes`
-3. **Seleccionar** la capa en el desplegable
-4. **Configurar el umbral** (opcional):
-- Valor pequeño (0.0001): detecta casi todos los traslapes
-- Valor más grande: ignora traslapes muy pequeños
-5. **Opcional**: Marcar/desmarcar "Crear capas de traslapes" según necesidad
-6. **Hacer clic en "Iniciar"**
-7. **Revisar** resultados en el panel de log y en el mapa
+### Step by step
+1. **Load** a polygon layer in QGIS
+2. **Open the plugin**: Toolbar button or `Plugins → Fix Traslapes` menu
+3. **Select** the layer from the dropdown
+4. **Configure the threshold** (optional):
+- Small value (0.0001): detects almost all overlaps
+- Larger value: ignores very small overlaps
+5. **Optional**: Check/uncheck "Create overlap layers" as needed
+6. **Click "Start"**
+7. **Review** results in the log panel and on the map
 
-### Visualización de resultados
+### Results visualization
 
-| Capa generada | Descripción |
-|---------------|-------------|
-| `nombre_capa_TRASLAPES` | Polígonos rojos semitransparentes que muestran las áreas corregidas |
-| `nombre_capa_CENTROIDES` | Puntos rojos en el centro de cada traslape para inspección rápida |
-| `nombre_capa_CORREGIDO` | **Capa final** con geometrías limpias, editable y seleccionable |
+| Generated layer | Description |
+|-----------------|-------------|
+| `layer_name_OVERLAPS` | Semi-transparent red polygons showing corrected areas |
+| `layer_name_CENTROIDS` | Red points at the center of each overlap for quick inspection |
+| `layer_name_FIXED` | **Final layer** with clean geometries, editable and selectable |
 
-> 💡 **Nota**: La capa corregida se agrega automáticamente al proyecto y queda lista para editar o guardar.
+> 💡 **Note**: The corrected layer is automatically added to the project and ready to edit or save.
 
-## ⚙️ Configuración avanzada
+## ⚙️ Advanced Configuration
 
-### Umbral de detección
-- **0.0001** (por defecto): Detecta traslapes mínimos (recomendado para datos georreferenciados)
-- **0.001 - 0.01**: Para ignorar micro-traslapes menores a 1m²/10m² según tu unidad
-- Ajusta según la escala y precisión de tus datos
+### Detection threshold
+- **0.0001** (default): Detects minimal overlaps (recommended for georeferenced data)
+- **0.001 - 0.01**: To ignore micro-overlaps smaller than 1m²/10m² depending on your units
+- Adjust according to your data scale and precision
 
-## 🛠️ Desarrollo
+## 🛠️ Development
 
-### Estructura del plugin
+### Plugin structure
+
 fix_traslapes/
-├── init.py # Inicialización del plugin
-├── fix_traslapes_main.py # Código principal
-├── metadata.txt # Metadatos para QGIS
-└── icon.png # Ícono del plugin (64x64)
+├── init.py # Plugin initialization
+├── fix_traslapes_main.py # Main code
+├── metadata.txt # Metadata for QGIS
+└── icon.png # Plugin icon (64x64)
 
-### Tecnologías utilizadas
-- **PyQt5** - Interfaz gráfica
-- **QGIS Python API** - Manipulación de capas y geometrías
-- **QThread** - Procesamiento en segundo plano
 
-## 🐛 Reporte de errores
+### Technologies used
+- **PyQt5** - Graphical interface
+- **QGIS Python API** - Layer and geometry manipulation
+- **QThread** - Background processing
 
-Si encuentras algún problema o tienes sugerencias:
-1. Revisa los [issues existentes](https://github.com/viquezr-dev/fix_traslapes/issues)
-2. Abre un nuevo issue describiendo:
-   - Versión de QGIS
-   - Tipo de capa (formato, CRS)
-   - Pasos para reproducir el error
-   - Capturas de pantalla (si aplica)
+## 🐛 Bug Reporting
+
+If you find any issues or have suggestions:
+1. Check the [existing issues](https://github.com/viquezr-dev/fix_traslapes/issues)
+2. Open a new issue describing:
+   - QGIS version
+   - Layer type (format, CRS)
+   - Steps to reproduce the error
+   - Screenshots (if applicable)
 
 ## 📝 Changelog
 
-### Versión 2.4 (2026-04-15)
-- ✨ Interfaz mejorada con estilos profesionales
-- 🐛 Corrección de errores en detección de capas
-- ⚡ Optimización del rendimiento en capas grandes
-- 📊 Barra de progreso más precisa
-- 💡 Mensajes de log más informativos
+### Version 2.4 (2026-04-15)
+- ✨ Improved interface with professional styles
+- 🐛 Fixed layer detection errors
+- ⚡ Performance optimization for large layers
+- 📊 More accurate progress bar
+- 💡 More informative log messages
 
-### Versión 1.0
-- 🚀 Lanzamiento inicial
-- Detección básica de traslapes
-- Corrección geométrica automática
+### Version 1.0
+- 🚀 Initial release
+- Basic overlap detection
+- Automatic geometric correction
 
-## 👨‍💻 Autor
+## 👨‍💻 Author
 
 **Raúl Viquez**
 - GitHub: [@viquezr-dev](https://github.com/viquezr-dev)
 - Email: viquezr@gmail.com
 
-## 📄 Licencia
+## 📄 License
 
-Este plugin está bajo la licencia **GNU General Public License v2.0**.  
-Consulta el archivo [LICENSE](LICENSE) para más detalles.
+This plugin is licensed under the **GNU General Public License v2.0**.  
+See the [LICENSE](LICENSE) file for more details.
 
-## 🙏 Agradecimientos
+## 🙏 Acknowledgments
 
-- Comunidad de QGIS por su excelente documentación
-- Contribuidores que reportan issues y sugieren mejoras
+- QGIS community for their excellent documentation
+- Contributors who report issues and suggest improvements
 
 ---
 
-**¿Te gusta el plugin?**  
-⭐ ¡Dale una estrella en GitHub!  
-🐛 ¿Encontraste un bug? Abre un [issue](https://github.com/viquezr-dev/fix_traslapes/issues)
+**Do you like the plugin?**  
+⭐ Give it a star on GitHub!  
+🐛 Found a bug? Open an [issue](https://github.com/viquezr-dev/fix_traslapes/issues)
