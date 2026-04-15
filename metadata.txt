@@ -7,7 +7,7 @@ about=Herramienta para detectar y corregir traslapes en poligonos. Caracteristic
 category=Vector
 version=1.0
 author=RAUL VIQUEZ (viquezr@gmail.com)
-
+email=viquezr@gmail.com
 changelog=
     1.0.0 Primera version estable
     1.0.0 Deteccion y correccion de traslapes en poligonos
