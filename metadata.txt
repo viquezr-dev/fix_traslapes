@@ -1,19 +1,16 @@
 [general]
 name=Fix Traslapes
 qgisMinimumVersion=3.0
-qgisMaximumVersion=3.99
-description=Detecta y corrige traslapes en capas de poligonos
-about=Herramienta para detectar y corregir traslapes en poligonos. Caracteristicas: cargar capa de poligonos, configurar umbral de deteccion, correccion automatica de geometrias traslapadas, visualizacion de resultados con capas de traslapes (rojo) y centroides.
+qgisMaximumVersion=4.99
+description=Detects and fixes overlaps in polygon layers
+about=Tool to detect and fix overlaps in polygons. Features: load polygon layer, configure detection threshold, automatic correction of overlapping geometries, visualization of results with overlap layers (red) and centroids.
 category=Vector
-version=1.0
+version=1.2.1
 author=RAUL VIQUEZ (viquezr@gmail.com)
 email=viquezr@gmail.com
 changelog=
-    1.0.0 Primera version estable
-    1.0.0 Deteccion y correccion de traslapes en poligonos
-    1.0.0 Generacion de capas de resultado (poligonos corregidos, areas de traslape, centroides)
-
-tags=traslapes,poligonos,correccion,geometria,vector,overlap,fix
+    1.2.1 stable version/ Updated plugin metadata: qgisMaximumVersion changed from 3.99 to 4.99.
+tags=overlaps,polygons,correction,geometry,vector,overlap,fix
 homepage=https://github.com/viquezr-dev/fix_traslapes
 tracker=https://github.com/viquezr-dev/fix_traslapes/issues
 repository=https://github.com/viquezr-dev/fix_traslapes
